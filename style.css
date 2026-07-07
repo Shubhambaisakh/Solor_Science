@@ -1420,18 +1420,16 @@ img, svg {
   
   /* Hero Section Mobile - ABSOLUTE FULL SCREEN */
   .hero {
-    height: 100vh !important;
-    height: 100dvh !important;
+    height: auto !important;
     min-height: 100vh !important;
     min-height: 100dvh !important;
-    max-height: 100vh !important;
-    max-height: 100dvh !important;
-    padding-top: 65px !important;
-    padding-bottom: 0 !important;
+    max-height: none !important;
+    padding-top: 85px !important;
+    padding-bottom: 25px !important;
     margin-bottom: 0 !important;
-    overflow: hidden !important;
+    overflow-y: auto !important;
     display: flex !important;
-    align-items: center !important;
+    align-items: flex-start !important;
   }
   
   .hero .container {
@@ -1439,13 +1437,13 @@ img, svg {
     gap: 10px !important;
     text-align: left !important;
     width: 100% !important;
-    height: 100% !important;
+    height: auto !important;
     max-height: none !important;
-    overflow: hidden !important;
+    overflow: visible !important;
     display: flex !important;
     flex-direction: column !important;
-    justify-content: center !important;
-    padding: 0 20px !important;
+    justify-content: flex-start !important;
+    padding: 10px 20px 20px 20px !important;
   }
   
   .hero-content {
@@ -6456,22 +6454,35 @@ html.lenis, html.lenis body {
 
 /* Overrides for Extra Small Mobile Viewports (<= 480px) */
 @media (max-width: 480px) {
-  /* Fix Hero Stats Grid Column Span Bug on extra-small mobile */
+  /* Keep 3-column compact grid layout on extra-small mobile to save vertical space */
+  .hero-stats-inline {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 0 !important;
+    padding: 6px 0 !important;
+  }
+  
   .hero-stats-inline .stat-inline {
-    grid-column: span 1 !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-bottom: none !important;
     border-right: none !important;
   }
-  
-  /* Remove bottom border on the last stat item */
-  .hero-stats-inline .stat-inline:last-child {
-    border-bottom: none !important;
+
+  .stat-inline:nth-child(1) {
+    grid-column: span 1 !important;
+    border-bottom: 1px solid rgba(255,255,255,0.08) !important;
+    border-right: 1px solid rgba(255,255,255,0.08) !important;
   }
-  
-  .hero-stats-inline {
-    grid-template-columns: 1fr !important;
-    gap: 0 !important;
-    padding: 8px !important;
+
+  .stat-inline.stat-highlight {
+    grid-column: span 2 !important;
+    border-bottom: 1px solid rgba(255,255,255,0.08) !important;
+  }
+
+  .stat-inline:nth-child(5) {
+    border-right: 1px solid rgba(255,255,255,0.08) !important;
+  }
+
+  .stat-inline:nth-child(7) {
+    border-right: 1px solid rgba(255,255,255,0.08) !important;
   }
 }
 
