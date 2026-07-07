@@ -1848,51 +1848,58 @@ img, svg {
 /* Extra Small Mobile (Max width 480px) */
 @media (max-width: 480px) {
   .hero {
-    padding-top: 70px;
-    padding-bottom: 30px;
+    padding-top: 75px !important;
+    padding-bottom: 25px !important;
   }
   
   .hero-title-new {
-    font-size: 1.85rem;
+    font-size: 1.65rem !important;
   }
   
   .hero-subtitle {
-    font-size: 0.92rem;
+    font-size: 0.8rem !important;
   }
   
   .hero-badge {
-    font-size: 0.72rem;
-    padding: 6px 12px;
+    font-size: 0.7rem !important;
+    padding: 5px 10px !important;
+    margin-bottom: 6px !important;
   }
   
   .stat-number-hero {
-    font-size: 1.5rem;
+    font-size: 1.2rem !important;
   }
   
   .stat-plus {
-    font-size: 1.2rem;
+    font-size: 1rem !important;
   }
   
   .stat-highlight .stat-badge-text {
-    font-size: 0.9rem;
+    font-size: 0.8rem !important;
   }
   
   .stat-label-hero {
-    font-size: 0.58rem;
+    font-size: 0.52rem !important;
   }
   
   .stat-icon-small {
-    font-size: 0.9rem;
+    font-size: 0.85rem !important;
   }
   
+  .hero-ctas-new {
+    gap: 6px !important;
+  }
+
   .btn-hero-primary,
   .btn-hero-secondary {
-    padding: 12px 20px;
-    font-size: 0.88rem;
+    padding: 10px 18px !important;
+    font-size: 0.85rem !important;
+    min-height: 42px !important;
   }
   
   .trust-item-new {
-    font-size: 0.78rem;
+    font-size: 0.68rem !important;
+    padding: 5px 8px !important;
   }
   
   /* Logo Badge Extra Small */

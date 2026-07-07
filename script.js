@@ -440,18 +440,34 @@ document.addEventListener('DOMContentLoaded', () => {
       const hero = document.querySelector('.hero');
       if (hero) {
         const vh = window.innerHeight;
-        hero.style.height = vh + 'px';
-        hero.style.minHeight = vh + 'px';
-        hero.style.maxHeight = vh + 'px';
-        hero.style.overflow = 'hidden';
-        hero.style.paddingBottom = '0';
-        hero.style.marginBottom = '0';
-        
-        // Also ensure content doesn't overflow
-        const container = hero.querySelector('.container');
-        if (container) {
-          container.style.maxHeight = (vh - 65) + 'px';
-          container.style.overflow = 'hidden';
+        // On very small height screens (like iPhone SE), allow scrolling so content isn't cut off
+        if (vh <= 680) {
+          hero.style.height = 'auto';
+          hero.style.minHeight = vh + 'px';
+          hero.style.maxHeight = 'none';
+          hero.style.overflow = 'visible';
+          hero.style.paddingTop = '80px';
+          hero.style.paddingBottom = '30px';
+          
+          const container = hero.querySelector('.container');
+          if (container) {
+            container.style.maxHeight = 'none';
+            container.style.overflow = 'visible';
+            container.style.height = 'auto';
+          }
+        } else {
+          hero.style.height = vh + 'px';
+          hero.style.minHeight = vh + 'px';
+          hero.style.maxHeight = vh + 'px';
+          hero.style.overflow = 'hidden';
+          hero.style.paddingBottom = '0';
+          hero.style.marginBottom = '0';
+          
+          const container = hero.querySelector('.container');
+          if (container) {
+            container.style.maxHeight = (vh - 65) + 'px';
+            container.style.overflow = 'hidden';
+          }
         }
       }
     }
